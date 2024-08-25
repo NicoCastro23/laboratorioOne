@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,12 +12,12 @@ public class Administrador {
     private String nombre;
     private String id;
 
-    
     public void programarSesion(List<SesionEntrenamiento> sesiones, SesionEntrenamiento sesion) {
         sesiones.add(sesion);
     }
 
-    public Optional<SesionEntrenamiento> buscarSesion(List<SesionEntrenamiento> sesiones, Predicate<SesionEntrenamiento> filtro) {
+    public Optional<SesionEntrenamiento> buscarSesion(List<SesionEntrenamiento> sesiones,
+            Predicate<SesionEntrenamiento> filtro) {
         return sesiones.stream().filter(filtro).findFirst();
     }
 
@@ -25,4 +25,3 @@ public class Administrador {
         sesion.setEstado(nuevoEstado);
     }
 }
-

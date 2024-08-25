@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

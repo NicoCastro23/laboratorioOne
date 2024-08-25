@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo;
+package co.edu.uniquindio.poo.models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -102,7 +102,8 @@ public class ClubDeportivoApp {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Entrenador no encontrado"));
 
-        SesionEntrenamiento sesion = new SesionEntrenamiento(LocalDateTime.parse(fecha), duracion, TipoEstado.PROGRAMADA, deporte, entrenador);
+        SesionEntrenamiento sesion = new SesionEntrenamiento(LocalDateTime.parse(fecha), duracion,
+                TipoEstado.PROGRAMADA, deporte, entrenador);
         admin.programarSesion(sesiones, sesion);
         System.out.println("Sesión programada exitosamente.");
     }
@@ -110,7 +111,8 @@ public class ClubDeportivoApp {
     private static void gestionarSesion(Scanner scanner, Administrador admin) {
         System.out.print("Deporte de la sesión: ");
         String deporteNombre = scanner.next();
-        SesionEntrenamiento sesion = admin.buscarSesion(sesiones, s -> s.getDeporte().getNombre().equalsIgnoreCase(deporteNombre))
+        SesionEntrenamiento sesion = admin
+                .buscarSesion(sesiones, s -> s.getDeporte().getNombre().equalsIgnoreCase(deporteNombre))
                 .orElseThrow(() -> new IllegalArgumentException("Sesión no encontrada"));
 
         System.out.print("Nuevo estado (1. PROGRAMADA, 2. COMPLETADA): ");
