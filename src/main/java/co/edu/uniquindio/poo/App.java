@@ -7,13 +7,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+import co.edu.uniquindio.poo.models.GestionDeportes;
+
 public class App extends Application {
 
+    private GestionDeportes gestionDeportes;
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
+        gestionDeportes = new GestionDeportes();
         scene = new Scene(loadFXML("primary"), 640, 480); // Carga la vista `primary.fxml`
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm()); // Añadir CSS
         stage.setScene(scene);
         stage.setTitle("Inicio");
         stage.show();
