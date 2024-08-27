@@ -30,4 +30,7 @@ public class GestionDeportes {
         GestionDeportes.administrador = administrador;
     }
 
+    public void addDeporte(Deporte deporte) {
+        deportes.add(deporte);
+    }
 }

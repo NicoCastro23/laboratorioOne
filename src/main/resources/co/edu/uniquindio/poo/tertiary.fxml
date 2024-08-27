@@ -9,5 +9,13 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <Button fx:id="addSport" text="AgregarDeporte" onAction="#handleaddSportButton"/>
+    <Button text="Agregar Deporte" onAction="#handleAddSport"/>
+
+    <Button text="Agregar Entrenador" onAction="#handleAddTrainer"/>
+
+    <Button text="Agregar Miembro" onAction="#handleAddMember"/>
+
+    <Button text="Agregar Sesion" onAction="#handleAddSession"/>
+
+    <Button text="Gestionar Sesiones" onAction="#handleManageSessions"/>
 </VBox>

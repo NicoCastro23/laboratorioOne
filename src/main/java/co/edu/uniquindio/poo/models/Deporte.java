@@ -13,6 +13,12 @@ public class Deporte {
     private NivelDificultad nivelDificultad; // "bajo", "medio", "alto"
     private List<Entrenador> entrenadores = new ArrayList<>();
 
+    public Deporte(String nombre, String descripcion, NivelDificultad nivelDificultad) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.nivelDificultad = nivelDificultad;
+    }
+
     public void asignarEntrenador(Entrenador entrenador) {
         entrenadores.add(entrenador);
     }
