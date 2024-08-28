@@ -102,9 +102,10 @@ public class ClubDeportivoApp {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Entrenador no encontrado"));
 
-        SesionEntrenamiento sesion = new SesionEntrenamiento(LocalDateTime.parse(fecha), duracion,
-                TipoEstado.PROGRAMADA, deporte, entrenador);
-        admin.programarSesion(sesiones, sesion);
+        // SesionEntrenamiento sesion = new
+        // SesionEntrenamiento(LocalDateTime.parse(fecha), duracion,
+        // TipoEstado.PROGRAMADA, deporte, entrenador);
+        // admin.programarSesion(sesiones, sesion);
         System.out.println("Sesión programada exitosamente.");
     }
 

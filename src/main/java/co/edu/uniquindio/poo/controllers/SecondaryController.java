@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.models.Administrador;
-import co.edu.uniquindio.poo.models.GestionDeportes;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
@@ -28,7 +27,7 @@ public class SecondaryController {
             return;
         }
         Administrador administrador = new Administrador(name, id);
-        GestionDeportes.setAdministrador(administrador);
+        App.gestionDeportes.setAdministrador(administrador);
 
         // Aquí puedes crear el administrador con el nombre y el ID
         System.out.println("Administrador creado: Nombre = " + name + ", ID = " + id);

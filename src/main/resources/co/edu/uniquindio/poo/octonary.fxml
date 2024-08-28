@@ -29,4 +29,8 @@
     <ComboBox fx:id="estadoComboBox"/>
 
     <Button text="Crear sesion" onAction="#handleCreateSession"/>
+
+    <Button text="Salir" onAction="#handleSalir"/>
+    
+    
 </VBox>

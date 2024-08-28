@@ -21,5 +21,6 @@
     <Label text="Dificultad:"/>
     <ComboBox fx:id="dificultadComboBox"/>
 
-    <Button text="Crear Deporte" onAction="#handlecreate"/>
+    <Button text="Crear Deporte" onAction="#handleCreate"/>
+    
 </VBox>

@@ -37,7 +37,7 @@ public class SeptenaryController {
 
         try {
             // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("terciary");
+            App.setRoot("tertiary");
             ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();

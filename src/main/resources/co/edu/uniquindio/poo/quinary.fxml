@@ -20,4 +20,6 @@
     
 
     <Button text="Agregar Entrenador" onAction="#handleAddTrainer"/>
+
+    <Button text="Salir" onAction="#handleSalir"/>
 </VBox>

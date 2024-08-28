@@ -11,7 +11,7 @@ import co.edu.uniquindio.poo.models.GestionDeportes;
 
 public class App extends Application {
 
-    private GestionDeportes gestionDeportes;
+    public static GestionDeportes gestionDeportes;
     private static Scene scene;
 
     @Override
@@ -35,5 +35,10 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static Object gestionDeportes() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'gestionDeportes'");
     }
 }

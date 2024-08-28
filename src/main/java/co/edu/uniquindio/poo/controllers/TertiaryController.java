@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import co.edu.uniquindio.poo.App;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class TertiaryController {
 

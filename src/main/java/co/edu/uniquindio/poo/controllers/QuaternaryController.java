@@ -26,21 +26,22 @@ public class QuaternaryController {
     }
 
     @FXML
-    private void handlecreate() {
+    private void handleCreate() {
+
         String name = nameSportField.getText();
         String description = descriptionField.getText();
         NivelDificultad dificultad = dificultadComboBox.getValue();
 
         Deporte deporte = new Deporte(name, description, dificultad);
-
-        // Aquí podrías añadir la lógica para crear el deporte en el modelo
+        App.gestionDeportes.addDeporte(deporte);
 
         try {
             // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("terciary");
+            App.setRoot("tertiary");
             ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

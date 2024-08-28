@@ -3,10 +3,12 @@ package co.edu.uniquindio.poo.controllers;
 import java.io.IOException;
 
 import co.edu.uniquindio.poo.App;
-import co.edu.uniquindio.poo.models.NivelDificultad;
+import co.edu.uniquindio.poo.models.Entrenador;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+
 import javafx.scene.control.TextField;
+import java.util.ArrayList;
 
 public class QuinaryController {
     @FXML
@@ -20,13 +22,23 @@ public class QuinaryController {
         String name = nameTrainerField.getText();
         String especiality = especialityField.getText();
 
-        // Deporte deporte = new Deporte(name, description, dificultad);
-
-        // Aquí podrías añadir la lógica para crear el deporte en el modelo
+        Entrenador entrenador = new Entrenador(name, especiality, new ArrayList<>());
+        App.gestionDeportes.addEntrenador(entrenador);
 
         try {
             // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("terciary");
+            App.setRoot("tertiary");
+            ; // Esto supone que tienes otra vista llamada "secondary.fxml"
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleSalir() {
+        try {
+            // Cambiar la vista a otra pantalla (si es necesario)
+            App.setRoot("tertiary");
             ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();
