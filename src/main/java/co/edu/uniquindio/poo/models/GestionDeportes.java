@@ -38,19 +38,32 @@ public class GestionDeportes {
     public void addSesiones(SesionEntrenamiento sesionEntrenamiento) {
         sesionEntrenamientos.add(sesionEntrenamiento);
     }
-
+    /**
+     * Este método se encarga de buscar un deporte por su nombre en la lista de deportes.
+     * @param nombre El nombre del deporte a buscar. 
+     * @return Un objeto de tipo Deporte que coincida con el nombre proporcionado.
+     * @throws IllegalArgumentException En caso tal que no se encuentre el deporte con el nombre proporcionado.
+     */
     public Deporte encontrarDeporteporNombre(String nombre) {
         return deportes.stream()
                 .filter(d -> d.getNombre().equalsIgnoreCase(nombre))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Entrenador no encontrado"));
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("Deporte no encontrado"));
     }
+
+    /**
+     * Este método se encarga de buscar un entrenador por su nombre en la lista de entrenadoress.
+     * @param nombre El nombre del entrenador a buscar. 
+     * @return Un objeto de tipo Entrenador que coincida con el nombre proporcionado.
+     * @throws IllegalArgumentException En caso tal que no se encuentre el entrenador.
+     */
 
     public Entrenador encontrarEntrenadorporNombre(String entrenador) {
         return entrenadores.stream()
                 .filter(d -> d.getNombre().equalsIgnoreCase(entrenador))
-                .findFirst()
+                .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("Entrenador no encontrado"));
+
     }
 
 }

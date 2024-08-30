@@ -11,7 +11,12 @@ public class ClubDeportivoApp {
     private static List<Entrenador> entrenadores = new ArrayList<>();
     private static List<Miembro> miembros = new ArrayList<>();
     private static List<SesionEntrenamiento> sesiones = new ArrayList<>();
-
+/**
+     * Punto de entrada principal de la aplicación. Presenta un menú interactivo para realizar varias operaciones
+     * como crear deportes, entrenadores, miembros, y programar o gestionar sesiones de entrenamiento.
+     *
+     * @param args argumentos de la línea de comandos (no se utilizan en este programa).
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Administrador admin = new Administrador("Pedro", "123");
@@ -40,6 +45,12 @@ public class ClubDeportivoApp {
         }
     }
 
+     /**
+     * Método privado que crea un nuevo deporte y lo añade a la lista de deportes.
+     *
+     * @param scanner el objeto Scanner utilizado para leer la entrada del usuario.
+     */
+
     private static void crearDeporte(Scanner scanner) {
         System.out.print("Nombre del deporte: ");
         String nombre = scanner.next();
@@ -57,6 +68,12 @@ public class ClubDeportivoApp {
         System.out.println("Deporte creado exitosamente.");
     }
 
+    /**
+     * Método privado que crea un nuevo entrenador y lo añade a la lista de entrenadores.
+     *
+     * @param scanner el objeto Scanner utilizado para leer la entrada del usuario.
+     */
+
     private static void crearEntrenador(Scanner scanner) {
         System.out.print("Nombre del entrenador: ");
         String nombre = scanner.next();
@@ -66,6 +83,11 @@ public class ClubDeportivoApp {
         System.out.println("Entrenador creado exitosamente.");
     }
 
+    /**
+     * Método privado que crea un nuevo miembro y lo añade a la lista de miembros.
+     *
+     * @param scanner el objeto Scanner utilizado para leer la entrada del usuario.
+     */
     private static void crearMiembro(Scanner scanner) {
         System.out.print("Nombre del miembro: ");
         String nombre = scanner.next();
@@ -84,6 +106,12 @@ public class ClubDeportivoApp {
         System.out.println("Miembro creado exitosamente.");
     }
 
+    /**
+     * Método privado que programa una nueva sesión de entrenamiento y la añade a la lista de sesiones.
+     *
+     * @param scanner el objeto Scanner utilizado para leer la entrada del usuario.
+     * @param admin   el administrador responsable de programar la sesión.
+     */
     private static void programarSesion(Scanner scanner, Administrador admin) {
         System.out.print("Fecha (YYYY-MM-DD HH:MM): ");
         String fecha = scanner.next() + " " + scanner.next();
@@ -108,7 +136,12 @@ public class ClubDeportivoApp {
         // admin.programarSesion(sesiones, sesion);
         System.out.println("Sesión programada exitosamente.");
     }
-
+    /**
+     * Método privado que permite gestionar el estado de una sesión de entrenamiento existente.
+     *
+     * @param scanner el objeto Scanner utilizado para leer la entrada del usuario.
+     * @param admin   el administrador responsable de gestionar la sesión.
+     */
     private static void gestionarSesion(Scanner scanner, Administrador admin) {
         System.out.print("Deporte de la sesión: ");
         String deporteNombre = scanner.next();
