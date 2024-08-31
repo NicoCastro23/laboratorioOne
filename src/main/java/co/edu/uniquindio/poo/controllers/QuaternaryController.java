@@ -25,6 +25,15 @@ public class QuaternaryController {
         dificultadComboBox.getItems().setAll(NivelDificultad.values());
     }
 
+    /**
+     * Maneja el evento de creación de un nuevo deporte. Recoge los datos del nombre, descripción,
+     * y nivel de dificultad del deporte desde los campos de texto y el ComboBox, crea una instancia
+     * de `Deporte`, y la añade a la lista de deportes.
+     *
+     * Después de agregar el deporte, cambia la vista a "tertiary.fxml".
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handleCreate() {
 

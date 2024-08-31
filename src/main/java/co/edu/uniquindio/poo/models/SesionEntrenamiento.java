@@ -11,5 +11,5 @@ public class SesionEntrenamiento {
     private int duracion; // Duración en minutos
     private TipoEstado estado;
     private Deporte deporte;
-    private Entrenador entrenador;
+    private Entrenador entrenador; 
 }

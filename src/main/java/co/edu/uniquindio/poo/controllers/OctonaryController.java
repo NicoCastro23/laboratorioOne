@@ -38,6 +38,16 @@ public class OctonaryController {
         estadoComboBox.getItems().setAll(TipoEstado.values());
     }
 
+    /**
+     * Maneja el evento de creación de una nueva sesión de entrenamiento. Recoge los datos
+     * del nombre del deporte, duración, entrenador, y estado de la sesión desde los campos de texto
+     * y los controles de la vista, luego los valida y busca el deporte y entrenador
+     * en la gestión de deportes.
+     *
+     * Después de crear la sesión, cambia la vista a "tertiary.fxml".
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handleCreateSession() {
         LocalDate fechaEntrenamiento = dateField.getValue();
@@ -57,7 +67,12 @@ public class OctonaryController {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Maneja el evento de salir o volver a la vista anterior. Cambia la vista a "tertiary.fxml".
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handleSalir() {
         try {

@@ -29,6 +29,13 @@ public class SeptenaryController implements Initializable{
     @FXML
     private TextField idField;
 
+     /**
+     * Maneja el evento de creación de un nuevo miembro. Dependiendo del tipo de miembro seleccionado,
+     * se crea una instancia de `Adulto` o `Juvenil` y se agrega a la lista de miembros en la instancia de 
+     * `GestionDeportes`.
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handlecreateMember() {
         String name = nameMemberField.getText();
@@ -51,14 +58,19 @@ public class SeptenaryController implements Initializable{
         // Aquí podrías añadir la lógica para crear el deporte en el modelo
 
         try {
-            // Cambiar la vista a otra pantalla (si es necesario)
             App.setRoot("tertiary");
-            ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+     /**
+     * Inicializa la vista con los valores necesarios. En este caso, se agregan los tipos de miembro 
+     * disponibles al ComboBox `miembro`.
+     *
+     * @param arg0 URL utilizado para resolver rutas relativas para el objeto raíz, o null si no se proporciona.
+     * @param arg1 El ResourceBundle que se utilizará para localizar el objeto raíz, o null si no se proporciona.
+     */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         miembro.getItems().addAll(listaMiembro);

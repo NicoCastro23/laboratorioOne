@@ -17,6 +17,15 @@ public class QuinaryController {
     @FXML
     private TextField especialityField;
 
+    /**
+     * Maneja el evento de agregar un nuevo entrenador. Recoge los datos del nombre y especialidad
+     * del entrenador desde los campos de texto, crea una instancia de `Entrenador`, y la añade
+     * a la lista de entrenadores.
+     *
+     * Después de agregar el entrenador, cambia la vista a "tertiary.fxml".
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handleAddTrainer() {
         String name = nameTrainerField.getText();
@@ -26,20 +35,21 @@ public class QuinaryController {
         App.gestionDeportes.addEntrenador(entrenador);
 
         try {
-            // Cambiar la vista a otra pantalla (si es necesario)
             App.setRoot("tertiary");
-            ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Maneja el evento de salir o volver a la vista anterior. Cambia la vista a "tertiary.fxml".
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handleSalir() {
         try {
-            // Cambiar la vista a otra pantalla (si es necesario)
             App.setRoot("tertiary");
-            ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();
         }

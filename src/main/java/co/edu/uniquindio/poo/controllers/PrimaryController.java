@@ -10,14 +10,19 @@ public class PrimaryController {
     @FXML
     private Button startButton;
 
+    /**
+     * Maneja el evento de clic en el botón de inicio. Al hacer clic, imprime un mensaje
+     * en la consola indicando que la aplicación ha comenzado correctamente, y luego 
+     * cambia la vista a "secondary.fxml".
+     *
+     * @throws IOException Si ocurre un error al cambiar la vista.
+     */
     @FXML
     private void handleStartButton() {
-        // Aquí puedes definir la acción que tomará el botón
         System.out.println("Inicio aplicaion exitoso");
 
         try {
-            // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("secondary"); // Esto supone que tienes otra vista llamada "secondary.fxml"
+            App.setRoot("secondary");
         } catch (IOException e) {
             e.printStackTrace();
         }
