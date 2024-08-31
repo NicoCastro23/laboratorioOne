@@ -1,17 +1,25 @@
 package co.edu.uniquindio.poo.controllers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.models.Adulto;
-import co.edu.uniquindio.poo.models.Deporte;
-import co.edu.uniquindio.poo.models.Miembro;
-import co.edu.uniquindio.poo.models.NivelDificultad;
+import co.edu.uniquindio.poo.models.Juvenil;
+import co.edu.uniquindio.poo.models.TipoMiembro;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
-public class SeptenaryController {
+public class SeptenaryController implements Initializable{
+    @FXML
+    ChoiceBox<TipoMiembro> miembro;
+    private TipoMiembro[] listaMiembro = {
+        TipoMiembro.ADULTO, TipoMiembro.JUVENIL  
+    };
+
     @FXML
     private TextField nameMemberField;
 
@@ -22,16 +30,23 @@ public class SeptenaryController {
     private TextField idField;
 
     @FXML
-    private TextField tipeMenber;
-
-    @FXML
     private void handlecreateMember() {
         String name = nameMemberField.getText();
         String email = emailField.getText();
         String idMember = idField.getText();
-        String tipeMember = tipeMenber.getText();
+        TipoMiembro tipeMember = miembro.getValue();
 
-        Miembro miembro = new Adulto(name, email, idMember);
+        if (tipeMember == TipoMiembro.ADULTO){
+            Adulto adulto = new Adulto(name, email, idMember);
+
+            App.gestionDeportes.addMiembros(adulto);
+
+        }else{
+            Juvenil juvenil = new Juvenil(name, email, idMember);
+            App.gestionDeportes.addMiembros(juvenil);
+        }
+
+        
 
         // Aquí podrías añadir la lógica para crear el deporte en el modelo
 
@@ -42,5 +57,10 @@ public class SeptenaryController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        miembro.getItems().addAll(listaMiembro);
     }
 }
