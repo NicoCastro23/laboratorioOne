@@ -44,7 +44,7 @@ public class GestionDeportes {
      * @return Un objeto de tipo Deporte que coincida con el nombre proporcionado.
      * @throws IllegalArgumentException En caso tal que no se encuentre el deporte con el nombre proporcionado.
      */
-    public Deporte encontrarDeporteporNombre(String nombre) {
+    public Deporte buscarDeporteporNombre(String nombre) {
         return deportes.stream()
                 .filter(d -> d.getNombre().equalsIgnoreCase(nombre))
                 .findAny()
@@ -58,7 +58,7 @@ public class GestionDeportes {
      * @throws IllegalArgumentException En caso tal que no se encuentre el entrenador.
      */
 
-    public Entrenador encontrarEntrenadorporNombre(String entrenador) {
+    public Entrenador buscarEntrenadorporNombre(String entrenador) {
         return entrenadores.stream()
                 .filter(d -> d.getNombre().equalsIgnoreCase(entrenador))
                 .findAny()
