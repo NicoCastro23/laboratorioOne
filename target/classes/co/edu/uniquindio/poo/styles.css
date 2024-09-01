@@ -32,3 +32,24 @@
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
 }
+
+.list-cell {
+    -fx-background-color: #f0f8ff; /* Color de fondo de cada celda */
+    -fx-text-fill: #333333; /* Color del texto */
+    -fx-padding: 10px; /* Espaciado interno */
+    -fx-border-color: #87ceeb; /* Color del borde */
+    -fx-border-width: 0 0 1px 0; /* Borde en la parte inferior */
+}
+
+/* Estilo para la celda seleccionada */
+.list-cell:selected {
+    -fx-background-color: #87ceeb; /* Color de fondo cuando se selecciona */
+    -fx-text-fill: #ffffff; /* Color del texto cuando se selecciona */
+}
+
+/* Estilo para el ListView en general */
+.list-view {
+    -fx-background-color: #e0ffff; /* Color de fondo del ListView */
+    -fx-padding: 10px; /* Espaciado interno del ListView */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+}
