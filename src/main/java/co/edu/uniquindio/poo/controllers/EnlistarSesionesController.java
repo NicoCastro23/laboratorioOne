@@ -104,7 +104,7 @@ public class EnlistarSesionesController {
     private void handleSalir() {
         try {
             // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("menu");
+            App.setRoot("views/menu");
             ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();

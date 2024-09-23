@@ -46,7 +46,7 @@ public class LoginAdminController {
 
         try {
             // Cambiar la vista a otra pantalla (menu.fxml))
-            App.setRoot("menu");
+            App.setRoot("views/menu");
             ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();

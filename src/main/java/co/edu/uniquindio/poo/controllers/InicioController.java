@@ -20,9 +20,9 @@ public class InicioController {
      */
     @FXML
     private void handleStartButton() {
-        System.out.println("Inicio aplicaion exitoso");
+        System.out.println("Inicio aplicacion exitoso");
         try {
-            App.setRoot("loginadmin");
+            App.setRoot("views/loginadmin");
         } catch (IOException e) {
             e.printStackTrace();
         }

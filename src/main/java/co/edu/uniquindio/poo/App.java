@@ -29,8 +29,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         gestionDeportes = new GestionDeportes();
-        scene = new Scene(loadFXML("inicio"), 640, 480); // Carga la vista `primary.fxml`
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm()); // Añadir CSS
+        scene = new Scene(loadFXML("views/inicio"), 640, 480); // Carga la vista `inicio.fxml`
+        scene.getStylesheets().add(getClass().getResource("views/styles.css").toExternalForm()); // Añadir CSS
         stage.setScene(scene);
         stage.setTitle("Inicio");
         stage.show();
@@ -68,8 +68,4 @@ public class App extends Application {
         launch();
     }
 
-    public static Object gestionDeportes() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'gestionDeportes'");
-    }
 }

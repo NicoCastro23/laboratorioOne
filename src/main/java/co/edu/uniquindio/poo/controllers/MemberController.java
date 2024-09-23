@@ -16,6 +16,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 public class MemberController implements Initializable {
+
     @FXML
     ChoiceBox<TipoMiembro> miembro;
     private TipoMiembro[] listaMiembro = {
@@ -68,7 +69,7 @@ public class MemberController implements Initializable {
         // Mostrar un mensaje de éxito al usuario
         showAlert("Éxito", "Miembro creada exitosamente.");
         try {
-            App.setRoot("menu");
+            App.setRoot("views/menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -98,7 +99,7 @@ public class MemberController implements Initializable {
     @FXML
     private void handleSalir() {
         try {
-            App.setRoot("menu");
+            App.setRoot("views/menu");
         } catch (IOException e) {
             e.printStackTrace();
         }

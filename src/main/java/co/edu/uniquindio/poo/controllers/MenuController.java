@@ -16,7 +16,7 @@ public class MenuController {
     @FXML
     private void handleAddSport() {
         try {
-            App.setRoot("sport");
+            App.setRoot("views/sport");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -31,7 +31,7 @@ public class MenuController {
     @FXML
     private void handleAddTrainer() {
         try {
-            App.setRoot("trainer");
+            App.setRoot("views/trainer");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -46,7 +46,7 @@ public class MenuController {
     @FXML
     private void handleAddMember() {
         try {
-            App.setRoot("member");
+            App.setRoot("views/member");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class MenuController {
     @FXML
     private void handleAddSession() {
         try {
-            App.setRoot("sesion");
+            App.setRoot("views/sesion");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -76,7 +76,7 @@ public class MenuController {
     @FXML
     private void handleManageSessions() {
         try {
-            App.setRoot("enlistarsesionesview");
+            App.setRoot("views/enlistarsesionesview");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -91,7 +91,7 @@ public class MenuController {
     @FXML
     private void handleSalir() {
         try {
-            App.setRoot("inicio");
+            App.setRoot("views/inicio");
         } catch (IOException e) {
             e.printStackTrace();
         }

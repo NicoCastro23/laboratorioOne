@@ -34,13 +34,13 @@ public class TrainerController {
         String name = nameTrainerField.getText();
         String especiality = especialityField.getText();
 
-        Entrenador entrenador = new Entrenador(name, especiality, new ArrayList<>());
-        App.gestionDeportes.addEntrenador(entrenador);
-
         if (name.isEmpty() || especiality.isEmpty()) {
             showAlert("Campos vacíos", "Por favor, complete ambos campos.");
             return;
         }
+
+        Entrenador entrenador = new Entrenador(name, especiality, new ArrayList<>());
+        App.gestionDeportes.addEntrenador(entrenador);
 
         // Aquí puedes crear el administrador con el nombre y el ID
         System.out.println(
@@ -50,7 +50,7 @@ public class TrainerController {
         showAlert("Éxito", "Entrenador creado exitosamente.");
 
         try {
-            App.setRoot("menu");
+            App.setRoot("views/menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class TrainerController {
     @FXML
     private void handleSalir() {
         try {
-            App.setRoot("menu");
+            App.setRoot("views/menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
