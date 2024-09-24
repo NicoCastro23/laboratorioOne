@@ -1,99 +1,131 @@
 package co.edu.uniquindio.poo.controllers;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 import co.edu.uniquindio.poo.App;
+import co.edu.uniquindio.poo.util.AppLogger;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class MenuController {
+    private ResourceBundle bundle;
+    private Locale currentLocale;
 
-    /**
-     * Maneja el evento de agregar un deporte. Cambia la vista a la pantalla
-     * "sport.fxml".
-     * 
-     * @throws IOException Si ocurre un error al cargar la nueva vista.
-     */
+    @FXML
+    private Button addSportButton;
+    @FXML
+    private Button addTrainerButton;
+    @FXML
+    private Button addMemberButton;
+    @FXML
+    private Button addSessionButton;
+    @FXML
+    private Button manageSessionsButton;
+    @FXML
+    private Button exitButton;
+    @FXML
+    private Button changeLanguage;
+
     @FXML
     private void handleAddSport() {
         try {
-            App.setRoot("views/sport");
+            App.setRoot("sport");
+            AppLogger.getLogger().info("Navegación a la vista 'sport' exitosa.");
         } catch (IOException e) {
             e.printStackTrace();
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'sport'.", e);
         }
     }
 
-    /**
-     * Maneja el evento de agregar un entrenador. Cambia la vista a la pantalla
-     * "trainer.fxml".
-     * 
-     * @throws IOException Si ocurre un error al cargar la nueva vista.
-     */
     @FXML
     private void handleAddTrainer() {
         try {
-            App.setRoot("views/trainer");
+            App.setRoot("trainer");
+            AppLogger.getLogger().info("Navegación a la vista 'trainer' exitosa.");
         } catch (IOException e) {
             e.printStackTrace();
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'trainer'.", e);
         }
     }
 
-    /**
-     * Maneja el evento de agregar un miembro. Cambia la vista a la pantalla
-     * "septenary.fxml".
-     * 
-     * @throws IOException Si ocurre un error al cargar la nueva vista.
-     */
     @FXML
     private void handleAddMember() {
         try {
-            App.setRoot("views/member");
+            App.setRoot("member");
+            AppLogger.getLogger().info("Navegación a la vista 'Member' exitosa.");
         } catch (IOException e) {
             e.printStackTrace();
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'Member'.", e);
         }
     }
 
-    /**
-     * Maneja el evento de agregar una sesión. Cambia la vista a la pantalla
-     * "octonary.fxml".
-     * 
-     * @throws IOException Si ocurre un error al cargar la nueva vista.
-     */
     @FXML
     private void handleAddSession() {
         try {
-            App.setRoot("views/sesion");
+            App.setRoot("sesion");
+            AppLogger.getLogger().info("Navegación a la vista 'sesion' exitosa.");
         } catch (IOException e) {
             e.printStackTrace();
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'sesion'.", e);
         }
     }
 
-    /**
-     * Maneja el evento de gestionar sesiones. Cambia la vista a la pantalla
-     * "enlistarsesionesview.fxml".
-     * 
-     * @throws IOException Si ocurre un error al cargar la nueva vista.
-     */
     @FXML
     private void handleManageSessions() {
         try {
-            App.setRoot("views/enlistarsesionesview");
+            App.setRoot("enlistarsesionesview");
+            AppLogger.getLogger().info("Navegación a la vista 'enlistarsesiones' exitosa.");
         } catch (IOException e) {
             e.printStackTrace();
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'enlistarsesiones'.", e);
         }
     }
 
-    /**
-     * Maneja el evento de salir o volver a la vista anterior. Cambia la vista a
-     * "inicio.fxml".
-     *
-     * @throws IOException Si ocurre un error al cambiar la vista.
-     */
     @FXML
     private void handleSalir() {
         try {
-            App.setRoot("views/inicio");
+            App.setRoot("inicio");
+            AppLogger.getLogger().info("Navegación a la vista 'inicio' exitosa.");
         } catch (IOException e) {
             e.printStackTrace();
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'inicio'.", e);
         }
+    }
+
+    @FXML
+    private void initialize() {
+        // Inicializar el Locale y el ResourceBundle
+        currentLocale = Locale.of("es", "ES");// O establece el Locale inicial
+        loadResourceBundle();
+    }
+
+    private void loadResourceBundle() {
+        bundle = ResourceBundle.getBundle(
+                "co.edu.uniquindio.poo.properties.Mi_Recurso",
+                currentLocale);
+        updateTexts();
+    }
+
+    private void updateTexts() {
+        addSportButton.setText(bundle.getString("button.add_sport"));
+        addTrainerButton.setText(bundle.getString("button.add_trainer"));
+        addMemberButton.setText(bundle.getString("button.add_member"));
+        addSessionButton.setText(bundle.getString("button.add_session"));
+        manageSessionsButton.setText(bundle.getString("button.manage_sessions"));
+        exitButton.setText(bundle.getString("button.exit"));
+        changeLanguage.setText(bundle.getString("button.switch_language"));
+    }
+
+    @FXML
+    private void switchLanguage() {
+        if (currentLocale.getLanguage().equals("es")) {
+            currentLocale = Locale.of("en", "US");
+        } else {
+            currentLocale = Locale.of("es", "ES");
+        }
+        loadResourceBundle();
     }
 }

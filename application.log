@@ -1,0 +1,22 @@
+sept 24, 2024 1:48:11 P. M. co.edu.uniquindio.poo.App start
+INFO: Aplicación iniciada correctamente.
+sept 24, 2024 1:52:50 P. M. co.edu.uniquindio.poo.App start
+INFO: Aplicación iniciada correctamente.
+sept 24, 2024 2:10:50 P. M. co.edu.uniquindio.poo.App start
+INFO: Aplicación iniciada correctamente.
+sept 24, 2024 2:10:52 P. M. co.edu.uniquindio.poo.controllers.InicioController handleStartButton
+INFO: Navegación a la vista 'incio' exitosa.
+sept 24, 2024 2:10:56 P. M. co.edu.uniquindio.poo.controllers.LoginAdminController handleCreateAdmin
+INFO: Navegación a la vista 'loginAdmin' exitosa.
+sept 24, 2024 2:10:59 P. M. co.edu.uniquindio.poo.controllers.MenuController handleAddSport
+INFO: Navegación a la vista 'sport' exitosa.
+sept 24, 2024 2:11:01 P. M. co.edu.uniquindio.poo.controllers.MenuController handleAddTrainer
+INFO: Navegación a la vista 'trainer' exitosa.
+sept 24, 2024 2:11:03 P. M. co.edu.uniquindio.poo.controllers.MenuController handleAddMember
+INFO: Navegación a la vista 'Member' exitosa.
+sept 24, 2024 2:11:05 P. M. co.edu.uniquindio.poo.controllers.MenuController handleAddSession
+INFO: Navegación a la vista 'sesion' exitosa.
+sept 24, 2024 2:11:17 P. M. co.edu.uniquindio.poo.controllers.MenuController handleManageSessions
+INFO: Navegación a la vista 'enlistarsesiones' exitosa.
+sept 24, 2024 2:11:20 P. M. co.edu.uniquindio.poo.controllers.MenuController handleSalir
+INFO: Navegación a la vista 'inicio' exitosa.

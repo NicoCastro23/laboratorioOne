@@ -50,7 +50,7 @@ public class TrainerController {
         showAlert("Éxito", "Entrenador creado exitosamente.");
 
         try {
-            App.setRoot("views/menu");
+            App.setRoot("menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class TrainerController {
     @FXML
     private void handleSalir() {
         try {
-            App.setRoot("views/menu");
+            App.setRoot("menu");
         } catch (IOException e) {
             e.printStackTrace();
         }

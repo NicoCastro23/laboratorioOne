@@ -4,6 +4,8 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import co.edu.uniquindio.poo.App;
+import co.edu.uniquindio.poo.util.AppLogger;
+import java.util.logging.Level;
 
 public class InicioController {
 
@@ -22,8 +24,10 @@ public class InicioController {
     private void handleStartButton() {
         System.out.println("Inicio aplicacion exitoso");
         try {
-            App.setRoot("views/loginadmin");
+            App.setRoot("loginadmin");
+            AppLogger.getLogger().info("Navegación a la vista 'incio' exitosa.");
         } catch (IOException e) {
+            AppLogger.getLogger().log(Level.SEVERE, "Error al cargar la vista 'inicio'.", e);
             e.printStackTrace();
         }
     }

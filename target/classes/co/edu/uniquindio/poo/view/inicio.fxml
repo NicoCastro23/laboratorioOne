@@ -9,6 +9,6 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <Button fx:id="startButton" text="Iniciar Aplicación" onAction="#handleStartButton"/>
+    <Button fx:id="startButton" text="%button.startApp" onAction="#handleStartButton"/>
 </VBox>
 

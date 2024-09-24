@@ -69,7 +69,7 @@ public class MemberController implements Initializable {
         // Mostrar un mensaje de éxito al usuario
         showAlert("Éxito", "Miembro creada exitosamente.");
         try {
-            App.setRoot("views/menu");
+            App.setRoot("menu");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -99,7 +99,7 @@ public class MemberController implements Initializable {
     @FXML
     private void handleSalir() {
         try {
-            App.setRoot("views/menu");
+            App.setRoot("menu");
         } catch (IOException e) {
             e.printStackTrace();
         }

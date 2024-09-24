@@ -55,28 +55,26 @@ public class SesionController {
         int duracion = Integer.parseInt(durationField.getText());
         String entrenador = entrenadorField.getText();
         TipoEstado estado = estadoComboBox.getValue();
-
-        SesionEntrenamiento sesionEntrenamiento = new SesionEntrenamiento(fechaEntrenamiento, duracion, estado,
-                App.gestionDeportes.buscarDeporteporNombre(nombre),
-                App.gestionDeportes.buscarEntrenadorporNombre(entrenador));
-
-        App.gestionDeportes.agregarSesion(sesionEntrenamiento);
-
-        if (nombre.isEmpty() || duracion < 0 || entrenador.isEmpty()) {
-            showAlert("Campos vacíos", "Por favor, complete ambos campos.");
-            return;
-        }
-
-        System.out.println(
-                "Sesion creada: Nombre = " + nombre + ", Duracion = " + duracion + ", Entrenador = " + entrenador
-                        + ", Estado = " + estado + ", Fecha del entrenamiento = " + fechaEntrenamiento);
-
-        // Mostrar un mensaje de éxito al usuario
-        showAlert("Éxito", "Sesion creada exitosamente.");
-
         try {
+            if (nombre.isEmpty() || duracion < 0 || entrenador.isEmpty()) {
+                showAlert("Campos vacíos", "Por favor, complete ambos campos.");
+                return;
+            }
+            SesionEntrenamiento sesionEntrenamiento = new SesionEntrenamiento(fechaEntrenamiento, duracion, estado,
+                    App.gestionDeportes.buscarDeporteporNombre(nombre),
+                    App.gestionDeportes.buscarEntrenadorporNombre(entrenador));
+
+            App.gestionDeportes.agregarSesion(sesionEntrenamiento);
+
+            System.out.println(
+                    "Sesion creada: Nombre = " + nombre + ", Duracion = " + duracion + ", Entrenador = " + entrenador
+                            + ", Estado = " + estado + ", Fecha del entrenamiento = " + fechaEntrenamiento);
+
+            // Mostrar un mensaje de éxito al usuario
+            showAlert("Éxito", "Sesion creada exitosamente.");
+
             // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("views/menu");
+            App.setRoot("menu");
             ; // Esto supone que tienes otra vista llamada "menu.fxml"
         } catch (IOException e) {
             e.printStackTrace();
@@ -93,7 +91,7 @@ public class SesionController {
     private void handleSalir() {
         try {
             // Cambiar la vista a otra pantalla (si es necesario)
-            App.setRoot("views/menu");
+            App.setRoot("menu");
             ; // Esto supone que tienes otra vista llamada "secondary.fxml"
         } catch (IOException e) {
             e.printStackTrace();
