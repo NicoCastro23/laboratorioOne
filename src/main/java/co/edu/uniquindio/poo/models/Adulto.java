@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo.models;
 
-public class Adulto extends Miembro {
+import java.io.Serializable;
+
+public class Adulto extends Miembro implements Serializable {
 
     public Adulto(String nombre, String email, String id) {
         super(nombre, email, id);
